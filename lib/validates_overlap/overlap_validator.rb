@@ -9,7 +9,7 @@ class OverlapValidator < ActiveModel::EachValidator
   end
 
   def validate(record)
-    record.errors[attributes.first] << "is overlapped" if self.find_crossed(record)
+    record.errors[:base] << "El espacio de tiempo se encuentra ocupado" if self.find_crossed(record)
   end
 
 
